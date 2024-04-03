@@ -1,4 +1,5 @@
 FROM tangramor/nginx-php8-fpm:latest
 
-RUN python -m pip install requests
-RUN python -m pip install uuid
+RUN apt-get -y install python3-pip
+    python -m pip install requests
+    python -m pip install uuid
