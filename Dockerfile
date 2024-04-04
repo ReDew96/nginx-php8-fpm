@@ -28,5 +28,3 @@ COPY start.sh /start.sh
 EXPOSE 443 80
 
 CMD ["/start.sh"]
-
-FROM tangramor/nginx-php8-fpm
