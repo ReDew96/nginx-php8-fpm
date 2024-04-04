@@ -23,6 +23,10 @@ ENV NPMMIRROR=""
 
 COPY --from=nodejs /opt /opt
 COPY --from=nodejs /usr/local /usr/local
+COPY conf/supervisord.conf /etc/supervisord.conf
+COPY conf/php-fpm.conf /etc/supervisor/conf.d/php-fpm.conf
+COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY conf/default.conf /etc/nginx/conf.d/default.conf
 
 COPY start.sh /start.sh
 
