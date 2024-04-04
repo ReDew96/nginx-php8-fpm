@@ -1,5 +1,8 @@
 FROM tangramor/nginx-php8-fpm:latest
 
-RUN python3 -m ensurepip
-RUN python3 -m pip install requests
-RUN python3 -m pip install uuid
+FROM python:3
+
+RUN pip install --upgrade pip && \
+    pip install aldryn_apphooks_config && \
+    pip install requests && \
+    pip install uuid && \
