@@ -1,6 +1,8 @@
-FROM lscr.io/linuxserver/nginx
-
 FROM python:3
 
 RUN pip install --upgrade pip && \
-    pip install requests uuid
+    pip install --root-user-action=ignore --no-cache-dir requests uuid
+
+FROM tangramor/nginx-php8-fpm
+
+COPY --from=0 . .
